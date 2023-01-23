@@ -57,7 +57,7 @@ def get_raw_measurement(device: evdev.InputDevice) -> float:
             # Bottom right.
             data[3] = event.value / 100
         elif event.code == ecodes.BTN_A:
-            pass
+            sys.exit("ERROR: User pressed board button while measuring, aborting.")
         elif event.code == ecodes.SYN_DROPPED:
             pass
         elif event.code == ecodes.SYN_REPORT and event.value == 3:
