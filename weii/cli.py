@@ -156,17 +156,17 @@ def cli():
         default="",
     )
     parser.add_argument(
-        "-t",
-        "--terse",
+        "-w",
+        "--weight-only",
         action="store_true",
         help="only print the final weight",
     )
 
     args = parser.parse_args()
-    if args.terse:
+    if args.weight_only:
         global TERSE
         TERSE = True
-    measure_weight(args.adjust, args.disconnect_when_done, terse=args.terse)
+    measure_weight(args.adjust, args.disconnect_when_done, terse=args.weight_only)
 
 
 if __name__ == "__main__":
