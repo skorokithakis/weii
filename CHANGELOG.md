@@ -11,6 +11,8 @@ Fix
 
 Other
 ~~~~~
+- Feat: Abort if the user presses the board button while measuring.
+  [Stavros Korokithakis]
 - Feat: Add the `--command` argument. [Stavros Korokithakis]
 - Add LICENSE. [Stavros Korokithakis]
 - Doc: Add changelog. [Stavros Korokithakis]

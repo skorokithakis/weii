@@ -3,6 +3,8 @@ name = "weii"
 version = "0.1.0"
 description = "A utility to measure weight using the Wii Balance Board."
 authors = ["Stavros Korokithakis <hi@stavros.io>"]
+repository = "https://gitlab.com/stavros/weii"
+homepage = "https://gitlab.com/stavros/weii"
 license = "AGPL-3.0-or-later"
 readme = "README.md"
 
