@@ -15,7 +15,7 @@ TERSE = False
 
 
 def debug(message: str, force: bool = False) -> None:
-    if not TERSE:
+    if force or not TERSE:
         print(message)
 
 
@@ -102,7 +102,13 @@ def read_data(device: evdev.InputDevice, samples: int, threshold: float) -> List
     return data
 
 
-def measure_weight(adjust: float, disconnect_address: str, terse: bool) -> float:
+def measure_weight(
+    adjust: float,
+    disconnect_address: str,
+    command: Optional[str],
+    terse: bool,
+    fake: bool = False,
+) -> float:
     """Perform one weight measurement."""
     if disconnect_address and not re.match(
         r"^([0-9a-f]{2}[:]){5}([0-9a-f]{2})$", disconnect_address, re.IGNORECASE
@@ -110,14 +116,18 @@ def measure_weight(adjust: float, disconnect_address: str, terse: bool) -> float
         sys.exit("ERROR: Invalid device address to disconnect specified.")
 
     debug("Waiting for balance board...")
-    while True:
+    while not fake:
         board = get_board_device()
         if board:
             break
         time.sleep(0.5)
     debug("\aBalance board found, please step on.")
 
-    weight_data = read_data(board, 200, threshold=20)
+    if fake:
+        weight_data = [85.2] * 200
+    else:
+        weight_data = read_data(board, 200, threshold=20)
+
     final_weight = statistics.median(weight_data)
     final_weight += adjust
 
@@ -132,6 +142,10 @@ def measure_weight(adjust: float, disconnect_address: str, terse: bool) -> float
             ["/usr/bin/env", "bluetoothctl", "disconnect", disconnect_address],
             capture_output=True,
         )
+
+    if command:
+        subprocess.run(command.replace("{weight}", f"{final_weight:.1f}"), shell=True)
+
     return final_weight
 
 
@@ -146,6 +160,15 @@ def cli():
         " or to account for clothing)",
         type=float,
         default=0,
+    )
+    parser.add_argument(
+        "-c",
+        "--command",
+        help="the command to run when done (use `{weight}` to pass the weight "
+        "to the command",
+        type=str,
+        metavar="ADDRESS",
+        default="",
     )
     parser.add_argument(
         "-d",
@@ -163,10 +186,17 @@ def cli():
     )
 
     args = parser.parse_args()
+
     if args.weight_only:
         global TERSE
         TERSE = True
-    measure_weight(args.adjust, args.disconnect_when_done, terse=args.weight_only)
+
+    measure_weight(
+        args.adjust,
+        args.disconnect_when_done,
+        command=args.command,
+        terse=args.weight_only,
+    )
 
 
 if __name__ == "__main__":
