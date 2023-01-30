@@ -167,7 +167,7 @@ def cli():
         help="the command to run when done (use `{weight}` to pass the weight "
         "to the command",
         type=str,
-        metavar="ADDRESS",
+        metavar="COMMAND",
         default="",
     )
     parser.add_argument(

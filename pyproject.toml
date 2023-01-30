@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "weii"
+name = "pyweii"
 version = "0.1.0"
 description = "A utility to measure weight using the Wii Balance Board."
 authors = ["Stavros Korokithakis <hi@stavros.io>"]
@@ -13,7 +13,7 @@ python = ">=3.8,<4"
 evdev = "^1.6.1"
 
 [tool.poetry.scripts]
-weii = "weii.cli:cli"
+weii = "pyweii.cli:cli"
 
 [build-system]
 requires = ["poetry-core"]
