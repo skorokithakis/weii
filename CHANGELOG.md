@@ -11,6 +11,8 @@ Fix
 
 Other
 ~~~~~
+- Doc: Documentation updates. [Stavros Korokithakis]
+- Switch to ruff. [Stavros Korokithakis]
 - Chore: Add repository and homepage. [Stavros Korokithakis]
 - Feat: Abort if the user presses the board button while measuring.
   [Stavros Korokithakis]

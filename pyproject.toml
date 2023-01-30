@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyweii"
-version = "0.1.0"
+version = "0.1.1"
 description = "A utility to measure weight using the Wii Balance Board."
 authors = ["Stavros Korokithakis <hi@stavros.io>"]
 repository = "https://gitlab.com/stavros/weii"
