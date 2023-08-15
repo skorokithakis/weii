@@ -11,6 +11,7 @@ Fix
 
 Other
 ~~~~~
+- Build: Release v0.1.1. [Stavros Korokithakis]
 - Doc: Documentation updates. [Stavros Korokithakis]
 - Switch to ruff. [Stavros Korokithakis]
 - Chore: Add repository and homepage. [Stavros Korokithakis]

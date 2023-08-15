@@ -10,13 +10,13 @@ Installation
 To install using `pipx` (recommended) or `pip`, run:
 
 ```
-pipx install pyweii
+pipx install weii
 ```
 
 or
 
 ```
-pip install pyweii
+pip install weii
 ```
 
 
