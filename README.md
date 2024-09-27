@@ -4,6 +4,8 @@ Weii
 Weii (pronounced "weigh") is a small script that connects to a Wii Balance Board, reads a weight measurement, and disconnects.
 Weii is the new, redesigned spiritual successor to [gr8w8upd8m8](https://github.com/skorokithakis/gr8w8upd8m8).
 
+The latest version is available at https://gitlab.com/stavros/weii.
+
 Installation
 ------------
 
@@ -51,3 +53,19 @@ You can also adjust the measurement to account for clothing, or to match some ot
 ```
 weii --adjust=-2.3
 ```
+
+License
+-------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
