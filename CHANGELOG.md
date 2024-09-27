@@ -7,6 +7,7 @@ Changelog
 
 Fix
 ~~~
+- Add __init__.py. [Stavros Korokithakis]
 - Rename `terse` argument. [Stavros Korokithakis]
 
 Other
