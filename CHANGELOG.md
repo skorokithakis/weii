@@ -11,6 +11,7 @@ Fix
 
 Other
 ~~~~~
+- Feat: Rename to `weii` [Stavros Korokithakis]
 - Build: Release v0.1.1. [Stavros Korokithakis]
 - Doc: Documentation updates. [Stavros Korokithakis]
 - Switch to ruff. [Stavros Korokithakis]
