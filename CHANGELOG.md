@@ -12,6 +12,7 @@ Fix
 
 Other
 ~~~~~
+- Feat: Add more license texts. [Stavros Korokithakis]
 - Feat: Add weii man page. [Stavros Korokithakis]
 - Feat: Add cli script in the pyproject config. [Stavros Korokithakis]
 - Feat: Rename to `weii` [Stavros Korokithakis]
