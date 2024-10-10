@@ -12,6 +12,7 @@ Fix
 
 Other
 ~~~~~
+- Feat: Various updates. [Stavros Korokithakis]
 - Ci: Migrate to ruff. [Stavros Korokithakis]
 - Ci: Add pre-commit action. [Stavros Korokithakis]
 - Doc: Change the project to GitHub. [Stavros Korokithakis]
