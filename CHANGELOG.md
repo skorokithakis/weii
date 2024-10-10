@@ -12,6 +12,7 @@ Fix
 
 Other
 ~~~~~
+- Ci: Migrate to ruff. [Stavros Korokithakis]
 - Ci: Add pre-commit action. [Stavros Korokithakis]
 - Doc: Change the project to GitHub. [Stavros Korokithakis]
 - Feat: Add more license texts. [Stavros Korokithakis]

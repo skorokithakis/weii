@@ -118,6 +118,7 @@ def read_data(device: evdev.InputDevice, samples: int, threshold: float) -> List
 
 def measure_weight(
     adjust: float,
+    minlimit: float,
     disconnect_address: str,
     command: Optional[str],
     terse: bool,
@@ -140,7 +141,7 @@ def measure_weight(
     if fake:
         weight_data = [85.2] * 200
     else:
-        weight_data = read_data(board, 200, threshold=20)
+        weight_data = read_data(board, 200, threshold=minlimit)
 
     final_weight = statistics.median(weight_data)
     final_weight += adjust
@@ -176,6 +177,13 @@ def cli():
         default=0,
     )
     parser.add_argument(
+        "-l",
+        "--minlimit",
+        help="adjust the minimum weight limit",
+        type=float,
+        default=20,
+    )
+    parser.add_argument(
         "-c",
         "--command",
         help="the command to run when done (use `{weight}` to pass the weight "
@@ -207,6 +215,7 @@ def cli():
 
     measure_weight(
         args.adjust,
+        args.minlimit,
         args.disconnect_when_done,
         command=args.command,
         terse=args.weight_only,

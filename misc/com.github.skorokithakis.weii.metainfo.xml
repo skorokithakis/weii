@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <id>com.github.skorokithakis.weii</id>
+  <metadata_license>MIT</metadata_license>
+  <name>weii</name>
+  <summary>read Wii balance board as a weight scale</summary>
+  <description>
+    <p>Weii (pronounced "weigh") is a small script that connects to a
+    Wii Balance Board, reads a weight measurement, and
+    disconnects.</p>
+  </description>
+  <url type="homepage">https://github.com/skorokithakis/weii</url>
+  <provides>
+    <modalias>hid:b0005g0000v0000057Ep00000306</modalias>
+    <modalias>lkmodule:hid_wiimote</modalias>
+  </provides>
+</component>
