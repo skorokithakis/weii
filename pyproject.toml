@@ -1,15 +1,15 @@
-[tool.poetry]
+[project]
 name = "weii"
 version = "0.1.2"
 description = "A utility to measure weight using the Wii Balance Board."
-authors = ["Stavros Korokithakis <hi@stavros.io>"]
+authors = [{ name = "Stavros Korokithakis", email = "hi@stavros.io" }]
 repository = "https://gitlab.com/stavros/weii"
 homepage = "https://gitlab.com/stavros/weii"
-license = "AGPL-3.0-or-later"
+license = { file = "LICENSE" }
 readme = "README.md"
+requires-python = ">=3.8,<4"
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4"
 evdev = "^1.6.1"
 
 [tool.poetry.scripts]
