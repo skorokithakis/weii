@@ -12,6 +12,12 @@ requires-python = ">=3.8,<4"
 [project.scripts]
 weii = "weii.cli:cli"
 
+[tool.poetry]
+name = "weii"
+version = "0.1.2"
+description = "A utility to measure weight using the Wii Balance Board."
+authors = ["Stavros Korokithakis <hi@stavros.io>"]
+
 [tool.poetry.dependencies]
 evdev = "^1.6.1"
 
